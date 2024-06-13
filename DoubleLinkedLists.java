@@ -145,44 +145,7 @@ public class DoubleLinkedLists {
         }
     }
 
-    public void addFirstTransaksi(String namapeminjam, String TNKB, int lamaPinjam, String member){
-        if(isEmpty()){
-            head = new BarangRental(null, 1, namaKendaraan,jenisKendaraan, tahun, biayaSewa , null);
-            
-        } else {
-            BarangRental newNode = new BarangRental(null, noTNKB, namaKendaraan,jenisKendaraan, tahun, biayaSewa , head);
-            head.prev = newNode;
-            head = newNode;
-        }
-        size++;
-    }
-
-    public void addLastTransaksi(String noTNKB, String namaKendaraan, String jenisKendaraan, int tahun, int biayaSewa){
-        if(isEmpty()){
-            addFirst(noTNKB, namaKendaraan,jenisKendaraan, tahun, biayaSewa);
-        } else {
-            BarangRental current = head;
-            while (current.next != null){
-                current = current.next;
-            }
-            BarangRental newNode = new BarangRental(current, noTNKB, namaKendaraan,jenisKendaraan, tahun, biayaSewa, null);
-            current.next = newNode;
-            size++;
-        }
-    }
-
-    public void printTransaksi(){
-        if(!isEmpty()){
-            System.out.println("| " + "Kode" + "| " + "No TNKB" + "| " + "Nama Barang" + "| " + "Nama Peminjam" + "| " + "Lama Pinjam" + "| " + "Total Biaya");
-            TransaksiRental tmp = head2;
-            for (int i = 1 ; i < size ; i++){
-                System.out.println("| " + i + "| " + tmp.no + "| " + tmp.namaPeminjam + "| " + tmp.lamaPinjam + "| " + tmp.totalBiaya);
-                tmp = tmp.next;
-            }
-        } else {
-            System.out.println("Linked lists Kosong");
-        }
-    }
+    
 }
 
 
